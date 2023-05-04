@@ -13,54 +13,69 @@ Al click dell’utente sulle frecce, il programma cambierà l’immagine attiva,
 */
 
 
-
+// creat Arrey contenente i codici delle img
 const imgCarosello = ["img/04.webp", "img/01.webp", "img/02.webp", "img/03.webp", "img/05.webp"];
-console.log(imgCarosello);
 
 
+// creata variabile contenente il container degli item (preso con id)
 let itemContainer = document.getElementById('items-container');
 
 
+
+// creato ciclo x creare gli item, dunque i div che conterrano gli arrey che a loro volta contengo i codici delle img
 for ( let i = 0; i < imgCarosello.length; i++) {
 
     item = `<div class="item"> <img src="${imgCarosello[i]}"> </div>`;
     
-    console.log(item);
-
+    // stampate i tag creati sopra, contenente le img che hanno una classe che li rende display none, dunque non visibili
    itemContainer.innerHTML += item;
 }
 
+
+// selezionati tutti i div che hanno classe item e data una variabile (items)
 const items = document.querySelectorAll('.item');
 
+// definita la variabile items, dandeole il primo valore che conta l'arrey (0) aggiunta classe axtive che rende la 1 img sempre visibile
 items[0].classList.add('active');
 
 
-let activeItem = 0
+// creata variabile con un valore 0
+let activeItem = 0;
 
 
+// creata variabile che prende l'elemento dal document che contiene id up (la freccia)
 const next = document.getElementById('up');
-console.log(next);
 
 
 
 
+// creeato evento al "bottone freccia" 
 next.addEventListener('click', 
 function() {
 
 
 
-
+// creata condizione in  cui stabilisco un SE (se activitem (dunque 0) è minore al numero di valori presenti nell'arrey -1 allora si verificherà tale condizione
     if (activeItem < (items.length - 1)) {
 
 
-
+        // presa la variabile items (che contiene la classe active al primo div) e rimossa la classe per renderla invisibile
         items[activeItem].classList.remove('active');
 
-
+        // si va allo step successivo 
         activeItem = activeItem + 1;
 
+
+        // aggiunta adesso la classe active
        items[activeItem].classList.add('active');
+
+
+       if (activeItem === (items.length -1)) {
+        next.classList.add('item');
+       }
     }
+
+
 })
 
 
@@ -79,7 +94,7 @@ function() {
 
 
     
-    if (activeItem < (items.length + 1)) {
+    if (activeItem < (items.length)) {
 
 
 
@@ -89,6 +104,13 @@ function() {
         activeItem = activeItem - 1;
 
        items[activeItem].classList.add('active');
+
+
+
+
+       if (activeItem === (items.length + 1)) {
+        indietro.classList.add('item');
+       }
     }
 })
 
