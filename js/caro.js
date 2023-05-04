@@ -20,20 +20,77 @@ console.log(imgCarosello);
 
 let itemContainer = document.getElementById('items-container');
 
-let img1 = `<div class="item active"> <img src="${imgCarosello[0]}"> </div>`;
-
-itemContainer.innerHTML = img1;
-
- imgCarosello.splice('0');
 
 for ( let i = 0; i < imgCarosello.length; i++) {
 
-     let item = `<div class="item"> <img src="${imgCarosello[i]}"> </div>`;
+    item = `<div class="item"> <img src="${imgCarosello[i]}"> </div>`;
     
     console.log(item);
 
    itemContainer.innerHTML += item;
 }
+
+const items = document.querySelectorAll('.item');
+
+items[0].classList.add('active');
+
+
+let activeItem = 0
+
+
+const next = document.getElementById('up');
+console.log(next);
+
+
+
+
+next.addEventListener('click', 
+function() {
+
+
+
+
+    if (activeItem < (items.length - 1)) {
+
+
+
+        items[activeItem].classList.remove('active');
+
+
+        activeItem = activeItem + 1;
+
+       items[activeItem].classList.add('active');
+    }
+})
+
+
+
+
+
+const indietro = document.getElementById('under');
+
+
+
+
+
+indietro.addEventListener('click', 
+function() {
+
+
+
+    
+    if (activeItem < (items.length + 1)) {
+
+
+
+        items[activeItem].classList.remove('active');
+
+
+        activeItem = activeItem - 1;
+
+       items[activeItem].classList.add('active');
+    }
+})
 
 
 
