@@ -36,15 +36,19 @@
 
 
 
-#item-container {
+#items-container {
 
     
-  
+  position: relative;
     
     
 
 }
 
+img {
+    max-width: 100%;
+  
+}
 
 #up {
     position: absolute;
@@ -64,9 +68,13 @@
     font-size: 30px;
 }
 
-img {
-    max-width: 100%;
-  
+
+
+
+
+
+.item {
+    display: none;
 }
 
 
@@ -75,6 +83,3 @@ img {
 }
 
 
-.hidden {
-    display: none;
-}

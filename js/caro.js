@@ -11,3 +11,30 @@ Al click dell’utente sulle frecce, il programma cambierà l’immagine attiva,
 
 
 */
+
+
+
+const imgCarosello = ["img/04.webp", "img/01.webp", "img/02.webp", "img/03.webp", "img/05.webp"];
+console.log(imgCarosello);
+
+
+let itemContainer = document.getElementById('items-container');
+
+let img1 = `<div class="item active"> <img src="${imgCarosello[0]}"> </div>`;
+
+itemContainer.innerHTML = img1;
+
+ imgCarosello.splice('0');
+
+for ( let i = 0; i < imgCarosello.length; i++) {
+
+     let item = `<div class="item"> <img src="${imgCarosello[i]}"> </div>`;
+    
+    console.log(item);
+
+   itemContainer.innerHTML += item;
+}
+
+
+
+
