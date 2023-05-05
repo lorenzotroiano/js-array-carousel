@@ -70,9 +70,9 @@ function() {
        items[activeItem].classList.add('active');
 
 
-       if (activeItem === (items.length -1)) {
-        next.classList.add('item');
-       }
+    //    if (activeItem === (items.length -1)) {
+    //     next.classList.add('item');
+    //    }
     }
 
 
@@ -107,12 +107,12 @@ function() {
 
 
 
-
-       if (activeItem === 0) {
-        indietro.classList.add('item');
+        // serve per far scomparire la freccia
+    //    if (activeItem === 0) {
+    //     indietro.classList.add('item');
 
         
-       }
+    //    }
     }
 })
 
