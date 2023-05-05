@@ -25,7 +25,7 @@ let itemContainer = document.getElementById('items-container');
 // creato ciclo x creare gli item, dunque i div che conterrano gli arrey che a loro volta contengo i codici delle img
 for ( let i = 0; i < imgCarosello.length; i++) {
 
-    item = `<div class="item"> <img src="${imgCarosello[i]}"> </div>`;
+    let item = `<div class="item"> <img src="${imgCarosello[i]}"> </div>`;
     
     // stampate i tag creati sopra, contenente le img che hanno una classe che li rende display none, dunque non visibili
    itemContainer.innerHTML += item;
@@ -94,7 +94,7 @@ function() {
 
 
     
-    if (activeItem < (items.length)) {
+    if (activeItem > 0) {
 
 
 
@@ -108,8 +108,10 @@ function() {
 
 
 
-       if (activeItem === (items.length + 1)) {
+       if (activeItem === 0) {
         indietro.classList.add('item');
+
+        
        }
     }
 })
